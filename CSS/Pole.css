@@ -11,8 +11,8 @@
 .allPole
 {
     background-color: lime;
-    width: 40vh;
-    height: 40vh;
+    width: 50vh;
+    height: 50vh;
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
