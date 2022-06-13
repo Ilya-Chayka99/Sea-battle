@@ -19,7 +19,18 @@
 
 
 }
-.kl
+.kl2
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid white;
+}
+.kl1
 {
     cursor: pointer;
     display: flex;
