@@ -4,7 +4,7 @@
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    height: 80vh;
+    height: 60vh;
     background-color: blue;
 }
 
@@ -40,4 +40,22 @@
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid white;
+}
+.play
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: lime;
+    height: 20vh;
+}
+.Random
+{
+    width: 20vw;
+    height: 10vh;
+}
+.Play
+{
+    width: 20vw;
+    height: 10vh;
 }
