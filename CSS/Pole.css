@@ -1,0 +1,32 @@
+.pole
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 80vh;
+    background-color: blue;
+}
+
+.allPole
+{
+    background-color: lime;
+    width: 40vh;
+    height: 40vh;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+.kl
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid white;
+}
