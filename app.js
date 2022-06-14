@@ -1,5 +1,28 @@
 let pol1=[]
 let pol2=[]
+let p1_41pal=[]
+let p1_31pal=[]
+let p1_32pal=[]
+let p1_21pal=[]
+let p1_22pal=[]
+let p1_23pal=[]
+let p1_11pal=[]
+let p1_12pal=[]
+let p1_13pal=[]
+let p1_14pal=[]
+let p1_41pals=0,p1_31pals=0,p1_32pals=0,p1_21pals=0,p1_22pals=0,p1_23pals=0,p1_11pals=0,p1_12pals=0,p1_13pals=0,p1_14pals=0;
+let p2_41pal=[]
+let p2_31pal=[]
+let p2_32pal=[]
+let p2_21pal=[]
+let p2_22pal=[]
+let p2_23pal=[]
+let p2_11pal=[]
+let p2_12pal=[]
+let p2_13pal=[]
+let p2_14pal=[]
+let p2_41pals=0,p2_31pals=0,p2_32pals=0,p2_21pals=0,p2_22pals=0,p2_23pals=0,p2_11pals=0,p2_12pals=0,p2_13pals=0,p2_14pals=0;
+let hod=1
 zero(0)
 //*******/Нажатие кнопок рандом/****************
 
@@ -19,34 +42,654 @@ function PrintPole(num)
     {
         for(let j=0;j<10;j++)
             for(let i=0;i<10;i++)
-                pole1.insertAdjacentHTML('beforeend',`<button class="kl1 ${i+1+j*10}" value="${i+1+j*10}">${i+1+j*10}</button>`)
+                pole1.insertAdjacentHTML('beforeend',`<button class="kl1 ${i+1+j*10}" value="${i+1+j*10}" disabled>${i+1+j*10}</button>`)
     }
     if(num===2)
     {
         for(let j=0;j<10;j++)
             for(let i=0;i<10;i++)
-                pole2.insertAdjacentHTML('beforeend',`<button class="kl2 ${100+i+1+j*10}" value="${i+1+j*10}">${i+1+j*10}</button>`)
+                pole2.insertAdjacentHTML('beforeend',`<button class="kl2 ${100+i+1+j*10}" value="${i+1+j*10}" disabled>${i+1+j*10}</button>`)
     }
     if(num===3)
     {
         for(let j=0;j<10;j++)
             for(let i=0;i<10;i++)
             {
-                pole1.insertAdjacentHTML('beforeend', `<button class="kl1 ${i+1+j*10}" value="${i+1+j*10}">${i + 1 + j * 10}</button>`)
-                pole2.insertAdjacentHTML('beforeend', `<button class="kl2 ${100+i+1+j*10}" value="${i+1+j*10}">${i + 1 + j * 10}</button>`)
+                pole1.insertAdjacentHTML('beforeend', `<button class="kl1 ${i+1+j*10}" value="${i+1+j*10}" disabled>${i + 1 + j * 10}</button>`)
+                pole2.insertAdjacentHTML('beforeend', `<button class="kl2 ${100+i+1+j*10}" value="${100+i+1+j*10}" disabled>${i + 1 + j * 10}</button>`)
             }
     }
 }
 PrintPole(3)
+
 //*******/Регистрация нажатия на клетку/****************
 
 let p1 = document.querySelectorAll(".kl1")
- p1.forEach(el=>{el.addEventListener("click",()=>{pop(el)})})
+ p1.forEach(el=>{el.addEventListener("click",()=>{fire(el)})})
+let p2 = document.querySelectorAll(".kl2")
+ p2.forEach(el=>{el.addEventListener("click",()=>{fire(el)})})
 
-function pop(el)
+function fire(ell)
 {
-    el.style.backgroundColor="red"
-    el.setAttribute("disabled","disabled")
+    let numKletka=+ell.value
+    let k=0;
+    if(numKletka<=100)
+    {
+        p1_41pal.forEach(el=>{
+            if(el===numKletka-1)
+            {
+                p1_41pals++
+                k++;
+                pol1[numKletka-1]=42
+                ell.style.backgroundColor="red"
+            }
+        })
+        if(k===0)
+        {
+            p1_31pal.forEach(el=>{
+                if(el===numKletka-1)
+                {
+                    p1_31pals++
+                    k++;
+                    pol1[numKletka-1]=32
+                    ell.style.backgroundColor="red"
+                }
+            })
+            if(k===0)
+            {
+                p1_32pal.forEach(el=>{
+                    if(el===numKletka-1)
+                    {
+                        p1_32pals++
+                        k++;
+                        pol1[numKletka-1]=32
+                        ell.style.backgroundColor="red"
+                    }
+                })
+                if(k===0)
+                {
+                    p1_21pal.forEach(el=>{
+                        if(el===numKletka-1)
+                        {
+                            p1_21pals++
+                            k++
+                            pol1[numKletka-1]=22
+                            ell.style.backgroundColor="red"
+                        }
+                    })
+                    if(k===0)
+                    {
+                        p1_22pal.forEach(el=>{
+                            if(el===numKletka-1)
+                            {
+                                p1_22pals++
+                                k++
+                                pol1[numKletka-1]=22
+                                ell.style.backgroundColor="red"
+                            }
+                        })
+                        if(k===0)
+                        {
+                            p1_23pal.forEach(el=>{
+                                if(el===numKletka-1)
+                                {
+                                    p1_23pals++
+                                    k++
+                                    pol1[numKletka-1]=22
+                                    ell.style.backgroundColor="red"
+                                }
+                            })
+                            if(k===0)
+                            {
+                                p1_11pal.forEach(el=>{
+                                    if(el===numKletka-1)
+                                    {
+                                        p1_11pals++
+                                        k++
+                                        pol1[numKletka-1]=12
+                                        ell.style.backgroundColor="red"
+                                    }
+                                })
+                                if(k===0)
+                                {
+                                    p1_12pal.forEach(el=>{
+                                        if(el===numKletka-1)
+                                        {
+                                            p1_12pals++
+                                            k++
+                                            pol1[numKletka-1]=12
+                                            ell.style.backgroundColor="red"
+                                        }
+                                    })
+                                    if(k===0)
+                                    {
+                                        p1_13pal.forEach(el=>{
+                                            if(el===numKletka-1)
+                                            {
+                                                p1_13pals++
+                                                k++
+                                                pol1[numKletka-1]=12
+                                                ell.style.backgroundColor="red"
+                                            }
+                                        })
+                                        if(k===0)
+                                        {
+                                            p1_14pal.forEach(el=>{
+                                                if(el===numKletka-1)
+                                                {
+                                                    p1_14pals++
+                                                    k++
+                                                    pol1[numKletka-1]=12
+                                                    ell.style.backgroundColor="red"
+                                                }
+                                                else
+                                                {
+                                                    ell.style.backgroundColor="blue"
+                                                    pol1[numKletka-1]=1
+                                                }
+                                            })
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if(p1_41pals===p1_41pal.length)
+        {
+            p1_41pals++
+            killShip(1,41)
+        }
+        if(p1_31pals===p1_31pal.length)
+        {
+            p1_31pals++
+            killShip(1,31)
+        }
+        if(p1_32pals===p1_32pal.length)
+        {
+            p1_32pals++
+            killShip(1,32)
+        }
+        if(p1_21pals===p1_21pal.length)
+        {
+            p1_21pals++
+            killShip(1,21)
+        }
+        if(p1_22pals===p1_22pal.length)
+        {
+            p1_22pals++
+            killShip(1,22)
+        }
+        if(p1_23pals===p1_23pal.length)
+        {
+            p1_23pals++
+            killShip(1,23)
+        }
+        if(p1_11pals===p1_11pal.length)
+        {
+            p1_11pals++
+            killShip(1,11)
+        }
+        if(p1_12pals===p1_12pal.length)
+        {
+            p1_12pals++
+            killShip(1,12)
+        }
+        if(p1_13pals===p1_13pal.length)
+        {
+            p1_13pals++
+            killShip(1,13)
+        }
+        if(p1_14pals===p1_14pal.length)
+        {
+            p1_14pals++
+            killShip(1,14)
+        }
+        if(k===0) DeActive(1)
+    }
+    else
+    {
+        numKletka-=100
+        p2_41pal.forEach(el=>{
+            if(el===numKletka-1)
+            {
+                p2_41pals++
+                k++;
+                pol2[numKletka-1]=42
+                ell.style.backgroundColor="red"
+            }
+        })
+        if(k===0)
+        {
+            p2_31pal.forEach(el=>{
+                if(el===numKletka-1)
+                {
+                    p2_31pals++
+                    k++;
+                    pol2[numKletka-1]=32
+                    ell.style.backgroundColor="red"
+                }
+            })
+            if(k===0)
+            {
+                p2_32pal.forEach(el=>{
+                    if(el===numKletka-1)
+                    {
+                        p2_32pals++
+                        k++;
+                        pol2[numKletka-1]=32
+                        ell.style.backgroundColor="red"
+                    }
+                })
+                if(k===0)
+                {
+                    p2_21pal.forEach(el=>{
+                        if(el===numKletka-1)
+                        {
+                            p2_21pals++
+                            k++
+                            pol2[numKletka-1]=22
+                            ell.style.backgroundColor="red"
+                        }
+                    })
+                    if(k===0)
+                    {
+                        p2_22pal.forEach(el=>{
+                            if(el===numKletka-1)
+                            {
+                                p2_22pals++
+                                k++
+                                pol2[numKletka-1]=22
+                                ell.style.backgroundColor="red"
+                            }
+                        })
+                        if(k===0)
+                        {
+                            p2_23pal.forEach(el=>{
+                                if(el===numKletka-1)
+                                {
+                                    p2_23pals++
+                                    k++
+                                    pol2[numKletka-1]=22
+                                    ell.style.backgroundColor="red"
+                                }
+                            })
+                            if(k===0)
+                            {
+                                p2_11pal.forEach(el=>{
+                                    if(el===numKletka-1)
+                                    {
+                                        p2_11pals++
+                                        k++
+                                        pol2[numKletka-1]=12
+                                        ell.style.backgroundColor="red"
+                                    }
+                                })
+                                if(k===0)
+                                {
+                                    p2_12pal.forEach(el=>{
+                                        if(el===numKletka-1)
+                                        {
+                                            p2_12pals++
+                                            k++
+                                            pol2[numKletka-1]=12
+                                            ell.style.backgroundColor="red"
+                                        }
+                                    })
+                                    if(k===0)
+                                    {
+                                        p2_13pal.forEach(el=>{
+                                            if(el===numKletka-1)
+                                            {
+                                                p2_13pals++
+                                                k++
+                                                pol2[numKletka-1]=12
+                                                ell.style.backgroundColor="red"
+                                            }
+                                        })
+                                        if(k===0)
+                                        {
+                                            p2_14pal.forEach(el=>{
+                                                if(el===numKletka-1)
+                                                {
+                                                    p2_14pals++
+                                                    k++
+                                                    pol2[numKletka-1]=12
+                                                    ell.style.backgroundColor="red"
+                                                }
+                                                else
+                                                {
+                                                    ell.style.backgroundColor="blue"
+                                                    pol2[numKletka-1]=1
+                                                }
+                                            })
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if(p2_41pals===p2_41pal.length)
+        {
+            p2_41pals++
+            killShip(2,41)
+        }
+        if(p2_31pals===p2_31pal.length)
+        {
+            p2_31pals++
+            killShip(2,31)
+        }
+        if(p2_32pals===p2_32pal.length)
+        {
+            p2_32pals++
+            killShip(2,32)
+        }
+        if(p2_21pals===p2_21pal.length)
+        {
+            p2_21pals++
+            killShip(2,21)
+        }
+        if(p2_22pals===p2_22pal.length)
+        {
+            p2_22pals++
+            killShip(2,22)
+        }
+        if(p2_23pals===p2_23pal.length)
+        {
+            p2_23pals++
+            killShip(2,23)
+        }
+        if(p2_11pals===p2_11pal.length)
+        {
+            p2_11pals++
+            killShip(2,11)
+        }
+        if(p2_12pals===p2_12pal.length)
+        {
+            p2_12pals++
+            killShip(2,12)
+        }
+        if(p2_13pals===p2_13pal.length)
+        {
+            p2_13pals++
+            killShip(2,13)
+        }
+        if(p2_14pals===p2_14pal.length)
+        {
+            p2_14pals++
+            killShip(2,14)
+        }
+        if(k===0) DeActive(2)
+    }
+
+    ell.setAttribute("disabled","disabled")
+}
+//*******/Проверка на смерть корабля/****************
+function killShipColor(el,num)
+{
+    let pole1 = document.querySelectorAll(".kl1")
+    let pole2 = document.querySelectorAll(".kl2")
+    if(num===2)
+    {
+        if (pol2[el - 11]%10===1 && el%10!==0)
+        {
+            pol2[el - 11] = 1
+            pole2[el-11].style.backgroundColor="blue"
+            pole2[el-11].setAttribute("disabled","disabled")
+        }
+        if (pol2[el - 10]%10===1)
+        {
+            pol2[el - 10] = 1
+            pole2[el-10].style.backgroundColor="blue"
+            pole2[el-10].setAttribute("disabled","disabled")
+        }
+        if (pol2[el - 9]%10===1 && el%10!==9)
+        {
+            pol2[el - 9] = 1
+            pole2[el-9].style.backgroundColor="blue"
+            pole2[el-9].setAttribute("disabled","disabled")
+        }
+        if (pol2[el - 1]%10===1 && el%10!==0)
+        {
+            pol2[el - 1] = 1
+            pole2[el-1].style.backgroundColor="blue"
+            pole2[el-1].setAttribute("disabled","disabled")
+        }
+        if (pol2[el + 1]%10===1 && el%10!==9)
+        {
+            pol2[el + 1] = 1
+            pole2[el+1].style.backgroundColor="blue"
+            pole2[el+1].setAttribute("disabled","disabled")
+        }
+        if (pol2[el + 9] %10===1 && el%10!==0)
+        {
+            pol2[el + 9] = 1
+            pole2[el+9].style.backgroundColor="blue"
+            pole2[el+9].setAttribute("disabled","disabled")
+        }
+        if (pol2[el + 10] %10===1)
+        {
+            pol2[el + 10] = 1
+            pole2[el+10].style.backgroundColor="blue"
+            pole2[el+10].setAttribute("disabled","disabled")
+        }
+        if (pol2[el + 11 ] %10===1 && el%10!==9)
+        {
+            pol2[el + 11] = 1
+            pole2[el+11].style.backgroundColor="blue"
+            pole2[el+11].setAttribute("disabled","disabled")
+        }
+    }
+    else
+    {
+        if (pol1[el - 11]%10===1 && el%10!==0)
+        {
+            pol1[el - 11] = 1
+            pole1[el-11].style.backgroundColor="blue"
+            pole1[el-11].setAttribute("disabled","disabled")
+        }
+        if (pol1[el - 10]%10===1)
+        {
+            pol1[el - 10] = 1
+            pole1[el-10].style.backgroundColor="blue"
+            pole1[el-10].setAttribute("disabled","disabled")
+        }
+        if (pol1[el - 9]%10===1 && el%10!==9)
+        {
+            pol1[el - 9] = 1
+            pole1[el-9].style.backgroundColor="blue"
+            pole1[el-9].setAttribute("disabled","disabled")
+        }
+        if (pol1[el - 1]%10===1 && el%10!==0)
+        {
+            pol1[el - 1] = 1
+            pole1[el-1].style.backgroundColor="blue"
+            pole1[el-1].setAttribute("disabled","disabled")
+        }
+        if (pol1[el + 1]%10===1 && el%10!==9)
+        {
+            pol1[el + 1] = 1
+            pole1[el+1].style.backgroundColor="blue"
+            pole1[el+1].setAttribute("disabled","disabled")
+        }
+        if (pol1[el + 9] %10===1 && el%10!==0)
+        {
+            pol1[el + 9] = 1
+            pole1[el+9].style.backgroundColor="blue"
+            pole1[el+9].setAttribute("disabled","disabled")
+        }
+        if (pol1[el + 10] %10===1)
+        {
+            pol1[el + 10] = 1
+            pole1[el+10].style.backgroundColor="blue"
+            pole1[el+10].setAttribute("disabled","disabled")
+        }
+        if (pol1[el + 11 ] %10===1 && el%10!==9)
+        {
+            pol1[el + 11] = 1
+            pole1[el+11].style.backgroundColor="blue"
+            pole1[el+11].setAttribute("disabled","disabled")
+        }
+    }
+    console.log(pol2)
+    console.log(pol1)
+}
+
+
+function killShip(planeKill,numShip)
+{
+
+    if(planeKill===2)
+    {
+        if(numShip===41)
+        {
+            p2_41pal.forEach(el=>{
+                pol2[el]=43
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===31)
+        {
+            p2_31pal.forEach(el=>{
+                pol2[el]=33
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===32)
+        {
+            p2_32pal.forEach(el=>{
+                pol2[el]=33
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===21)
+        {
+            p2_21pal.forEach(el=>{
+                pol2[el]=23
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===22)
+        {
+            p2_22pal.forEach(el=>{
+                pol2[el]=23
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===23)
+        {
+            p2_23pal.forEach(el=>{
+                pol2[el]=23
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===11)
+        {
+            p2_11pal.forEach(el=>{
+                pol2[el]=13
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===12)
+        {
+            p2_12pal.forEach(el=>{
+                pol2[el]=13
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===13)
+        {
+            p2_13pal.forEach(el=>{
+                pol2[el]=13
+                killShipColor(el,2)
+            })
+        }
+        if(numShip===14)
+        {
+            p2_14pal.forEach(el=>{
+                pol2[el]=13
+                killShipColor(el,2)
+            })
+        }
+    }
+    else
+    {
+        if(numShip===41)
+        {
+            p1_41pal.forEach(el=>{
+                pol1[el]=43
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===31)
+        {
+            p1_31pal.forEach(el=>{
+                pol1[el]=33
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===32)
+        {
+            p1_32pal.forEach(el=>{
+                pol1[el]=33
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===21)
+        {
+            p1_21pal.forEach(el=>{
+                pol1[el]=23
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===22)
+        {
+            p1_22pal.forEach(el=>{
+                pol1[el]=23
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===23)
+        {
+            p1_23pal.forEach(el=>{
+                pol1[el]=23
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===11)
+        {
+            p1_11pal.forEach(el=>{
+                pol1[el]=13
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===12)
+        {
+            p1_12pal.forEach(el=>{
+                pol1[el]=13
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===13)
+        {
+            p1_13pal.forEach(el=>{
+                pol1[el]=13
+                killShipColor(el,1)
+            })
+        }
+        if(numShip===14)
+        {
+            p1_14pal.forEach(el=>{
+                pol1[el]=13
+                killShipColor(el,1)
+            })
+        }
+    }
 }
 
 //*******/Расстановка кораблей/****************
@@ -72,10 +715,7 @@ function ArrangementOfShips (num)
                         let sum=1;
                         for(let l=1;l<j;l++)
                             if(pol1[stroka*10+stolbe+l]===0) sum++
-                        if (sum!==j)
-                        {
-                            kol++
-                        }
+                        if (sum!==j) kol++
                         else
                         {
                             let pole1 = document.querySelectorAll(".kl1")
@@ -83,14 +723,22 @@ function ArrangementOfShips (num)
                             {
                                 pole1[stroka*10+stolbe+i].style.backgroundColor="blue"
                                 pol1[stroka*10+stolbe+i]=j*10
+                                if(j===4) p1_41pal[i]=stroka*10+stolbe+i
+                                if(j===3 && kol===2) p1_31pal[i]=stroka*10+stolbe+i
+                                if(j===3 && kol===1) p1_32pal[i]=stroka*10+stolbe+i
+                                if(j===2 && kol===3) p1_21pal[i]=stroka*10+stolbe+i
+                                if(j===2 && kol===2) p1_22pal[i]=stroka*10+stolbe+i
+                                if(j===2 && kol===1) p1_23pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===4) p1_11pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===3) p1_12pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===2) p1_13pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===1) p1_14pal[i]=stroka*10+stolbe+i
                             }
                             filling_the_space(j,pol,stroka * 10 + stolbe,1)
                         }
                     }
                     else kol++
                 }
-
-
             }
             else
             {
@@ -103,23 +751,29 @@ function ArrangementOfShips (num)
                         let sum1=1;
                         for(let l=1;l<j;l++)
                             if(pol1[stroka*10+stolbe+l*10]===0) sum1++
-                        if (sum1!==j)
-                        {
-                            kol++
-                        }
+                        if (sum1!==j) kol++
                         else
                         {
                             let pole1 = document.querySelectorAll(".kl1")
                             for (let i = 0; i < j; i++) {
                                 pole1[stroka * 10 + stolbe + i * 10].style.backgroundColor = "blue"
                                 pol1[stroka * 10 + stolbe + i * 10] = j * 10
+                                if(j===4) p1_41pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===3 && kol===2) p1_31pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===3 && kol===1) p1_32pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===2 && kol===3) p1_21pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===2 && kol===2) p1_22pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===2 && kol===1) p1_23pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===4) p1_11pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===3) p1_12pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===2) p1_13pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===1) p1_14pal[i]=stroka * 10 + stolbe + i * 10
                             }
                             filling_the_space(j,pol,stroka * 10 + stolbe,1)
                         }
                     }
                     else kol++
                 }
-
             }
         }
         render(1)
@@ -140,10 +794,7 @@ function ArrangementOfShips (num)
                         let sum=1;
                         for(let l=1;l<j;l++)
                             if(pol2[stroka*10+stolbe+l]===0) sum++
-                        if (sum!==j)
-                        {
-                            kol++
-                        }
+                        if (sum!==j) kol++
                         else
                         {
                             let pole2 = document.querySelectorAll(".kl2")
@@ -151,14 +802,23 @@ function ArrangementOfShips (num)
                             {
                                 pole2[stroka*10+stolbe+i].style.backgroundColor="blue"
                                 pol2[stroka*10+stolbe+i]=j*10
+                                if(j===4) p2_41pal[i]=stroka*10+stolbe+i
+                                if(j===3 && kol===2) p2_31pal[i]=stroka*10+stolbe+i
+                                if(j===3 && kol===1) p2_32pal[i]=stroka*10+stolbe+i
+                                if(j===2 && kol===3) p1_21pal[i]=stroka*10+stolbe+i
+                                if(j===2 && kol===2) p2_22pal[i]=stroka*10+stolbe+i
+                                if(j===2 && kol===1) p2_23pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===4) p2_11pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===3) p2_12pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===2) p2_13pal[i]=stroka*10+stolbe+i
+                                if(j===1 && kol===1) p2_14pal[i]=stroka*10+stolbe+i
+
                             }
                             filling_the_space(j,pol,stroka * 10 + stolbe,2)
                         }
                     }
                     else kol++
                 }
-
-
             }
             else
             {
@@ -171,23 +831,29 @@ function ArrangementOfShips (num)
                         let sum1=1;
                         for(let l=1;l<j;l++)
                             if(pol2[stroka*10+stolbe+l*10]===0) sum1++
-                        if (sum1!==j)
-                        {
-                            kol++
-                        }
+                        if (sum1!==j) kol++
                         else
                         {
                             let pole2 = document.querySelectorAll(".kl2")
                             for (let i = 0; i < j; i++) {
                                 pole2[stroka * 10 + stolbe + i * 10].style.backgroundColor = "blue"
                                 pol2[stroka * 10 + stolbe + i * 10] = j * 10
+                                if(j===4) p2_41pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===3 && kol===2) p2_31pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===3 && kol===1) p2_32pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===2 && kol===3) p2_21pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===2 && kol===2) p2_22pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===2 && kol===1) p2_23pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===4) p2_11pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===3) p2_12pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===2) p2_13pal[i]=stroka * 10 + stolbe + i * 10
+                                if(j===1 && kol===1) p2_14pal[i]=stroka * 10 + stolbe + i * 10
                             }
                             filling_the_space(j,pol,stroka * 10 + stolbe,2)
                         }
                     }
                     else kol++
                 }
-
             }
         }
         render(2)
@@ -343,6 +1009,7 @@ function zeroColor()
 let pl1 = document.querySelector("#pl1")
 pl1.addEventListener("click",play1Ready)
 let pl2 = document.querySelector("#pl2")
+pl2.addEventListener("click",PlayGame)
 
 function play1Ready ()
 {
@@ -354,3 +1021,56 @@ function play1Ready ()
     zeroColor()
     console.log(pol1)
 }
+
+//*******/Начало игры/****************
+
+function PlayGame()
+{
+    zeroColor()
+    DeActive(2)
+
+}
+//*******/Переключение хода/****************
+
+function DeActive(num)
+{
+    let pole1 = document.querySelectorAll(".kl1")
+    let pole2 = document.querySelectorAll(".kl2")
+    if(num===1)
+    {console.log("-----------------------------")
+        pole2.forEach((el,i)=>{
+
+            console.log(pol2[i])
+            console.log(pol2[i]%10)
+            if(pol2[i]!==1 && pol2[i]%10!==2 && pol2[i]%10!==3)
+                el.removeAttribute("disabled")
+
+        })
+        hod=2
+        pole1.forEach((el,i)=>{
+            if(pol1[i]!==1 && pol1[i]%10!==2 && pol1[i]%10!==3)
+                el.setAttribute("disabled","disabled")
+
+        })
+
+    }
+    else
+    {
+        pole1.forEach((el,i)=>{
+            if(pol1[i]!==1 && pol1[i]%10!==2 && pol1[i]%10!==3)
+                el.removeAttribute("disabled")
+
+        })
+        hod=1
+        pole2.forEach((el,i)=>{
+            if(pol2[i]!==1 && pol2[i]%10!==2 && pol2[i]%10!==3)
+                el.setAttribute("disabled","disabled")
+
+        })
+    }
+
+
+}
+
+
+

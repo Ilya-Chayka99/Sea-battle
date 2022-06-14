@@ -10,7 +10,7 @@
 
 .allPole
 {
-    background-color: lime;
+    background-color: white;
     width: 50vh;
     height: 50vh;
     border: 2px solid black;
@@ -28,7 +28,7 @@
     text-align: center;
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 1px solid white;
+    border: 1px solid black;
 }
 .kl1
 {
@@ -39,7 +39,7 @@
     text-align: center;
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 1px solid white;
+    border: 1px solid black;
 }
 .play
 {
