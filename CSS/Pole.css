@@ -59,3 +59,10 @@
     width: 20vw;
     height: 10vh;
 }
+.gameOverbtn
+{
+    position: absolute;
+    width: 20vw;
+    height: 10vh;
+    display: none;
+}

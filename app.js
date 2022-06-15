@@ -24,44 +24,162 @@ let p2_14pal=[]
 let p2_41pals=0,p2_31pals=0,p2_32pals=0,p2_21pals=0,p2_22pals=0,p2_23pals=0,p2_11pals=0,p2_12pals=0,p2_13pals=0,p2_14pals=0;
 let hod=1
 let game1=0
+let game2=0
 zero(0)
+PrintPole()
+// localStorage.clear()
+//*******/Локал стор/****************
+function localStoree()
+{
+    if(localStorage.length===0)
+    {
+        localStorage.setItem("h",'0')
+        localStorage.setItem("m",'0')
+        localStorage.setItem("s",'0')
+        localStorage.setItem("hod",hod)
+        localStorage.setItem("game1",game1)
+        localStorage.setItem("game2",game2)
+        localStorage.setItem("141",p1_41pals)
+        localStorage.setItem("131",p1_31pals)
+        localStorage.setItem("132",p1_32pals)
+        localStorage.setItem("121",p1_21pals)
+        localStorage.setItem("122",p1_22pals)
+        localStorage.setItem("123",p1_23pals)
+        localStorage.setItem("111",p1_11pals)
+        localStorage.setItem("112",p1_12pals)
+        localStorage.setItem("113",p1_13pals)
+        localStorage.setItem("114",p1_14pals)
+        localStorage.setItem("241",p2_41pals)
+        localStorage.setItem("231",p2_31pals)
+        localStorage.setItem("232",p2_32pals)
+        localStorage.setItem("221",p2_21pals)
+        localStorage.setItem("222",p2_22pals)
+        localStorage.setItem("223",p2_23pals)
+        localStorage.setItem("211",p2_11pals)
+        localStorage.setItem("212",p2_12pals)
+        localStorage.setItem("213",p2_13pals)
+        localStorage.setItem("214",p2_14pals)
+
+        localStorage.setItem("141m",JSON.stringify(p1_41pal))
+        localStorage.setItem("131m",JSON.stringify(p1_31pal))
+        localStorage.setItem("132m",JSON.stringify(p1_32pal))
+        localStorage.setItem("121m",JSON.stringify(p1_21pal))
+        localStorage.setItem("122m",JSON.stringify(p1_22pal))
+        localStorage.setItem("123m",JSON.stringify(p1_23pal))
+        localStorage.setItem("111m",JSON.stringify(p1_11pal))
+        localStorage.setItem("112m",JSON.stringify(p1_12pal))
+        localStorage.setItem("113m",JSON.stringify(p1_13pal))
+        localStorage.setItem("114m",JSON.stringify(p1_14pal))
+        localStorage.setItem("241m",JSON.stringify(p2_41pal))
+        localStorage.setItem("231m",JSON.stringify(p2_31pal))
+        localStorage.setItem("232m",JSON.stringify(p2_32pal))
+        localStorage.setItem("221m",JSON.stringify(p2_21pal))
+        localStorage.setItem("222m",JSON.stringify(p2_22pal))
+        localStorage.setItem("223m",JSON.stringify(p2_23pal))
+        localStorage.setItem("211m",JSON.stringify(p2_11pal))
+        localStorage.setItem("212m",JSON.stringify(p2_12pal))
+        localStorage.setItem("213m",JSON.stringify(p2_13pal))
+        localStorage.setItem("214m",JSON.stringify(p2_14pal))
+
+        localStorage.setItem("pole1",JSON.stringify(pol1))
+        localStorage.setItem("pole2",JSON.stringify(pol2))
+    }
+    else
+    {
+        hod=+localStorage.getItem("hod")
+        game1=+localStorage.getItem("game1")
+        game2=+localStorage.getItem("game2")
+        p1_41pals=+localStorage.getItem("141")
+        p1_31pals=+localStorage.getItem("131")
+        p1_32pals=+localStorage.getItem("132")
+        p1_21pals=+localStorage.getItem("121")
+        p1_22pals=+localStorage.getItem("122")
+        p1_23pals=+localStorage.getItem("123")
+        p1_11pals=+localStorage.getItem("111")
+        p1_12pals=+localStorage.getItem("112")
+        p1_13pals=+localStorage.getItem("113")
+        p1_14pals=+localStorage.getItem("114")
+        p2_41pals=+localStorage.getItem("241")
+        p2_31pals=+localStorage.getItem("231")
+        p2_32pals=+localStorage.getItem("232")
+        p2_21pals=+localStorage.getItem("221")
+        p2_22pals=+localStorage.getItem("222")
+        p2_23pals=+localStorage.getItem("223")
+        p2_11pals=+localStorage.getItem("211")
+        p2_12pals=+localStorage.getItem("212")
+        p2_13pals=+localStorage.getItem("213")
+        p2_14pals=+localStorage.getItem("214")
+
+        p1_41pal=JSON.parse(localStorage.getItem("141m"))
+        p1_31pal=JSON.parse(localStorage.getItem("131m"))
+        p1_32pal=JSON.parse(localStorage.getItem("132m"))
+        p1_21pal=JSON.parse(localStorage.getItem("121m"))
+        p1_22pal=JSON.parse(localStorage.getItem("122m"))
+        p1_23pal=JSON.parse(localStorage.getItem("123m"))
+        p1_11pal=JSON.parse(localStorage.getItem("111m"))
+        p1_12pal=JSON.parse(localStorage.getItem("112m"))
+        p1_13pal=JSON.parse(localStorage.getItem("113m"))
+        p1_14pal=JSON.parse(localStorage.getItem("114m"))
+        p2_41pal=JSON.parse(localStorage.getItem("241m"))
+        p2_31pal=JSON.parse(localStorage.getItem("231m"))
+        p2_32pal=JSON.parse(localStorage.getItem("232m"))
+        p2_21pal=JSON.parse(localStorage.getItem("221m"))
+        p2_22pal=JSON.parse(localStorage.getItem("222m"))
+        p2_23pal=JSON.parse(localStorage.getItem("223m"))
+        p2_11pal=JSON.parse(localStorage.getItem("211m"))
+        p2_12pal=JSON.parse(localStorage.getItem("212m"))
+        p2_13pal=JSON.parse(localStorage.getItem("213m"))
+        p2_14pal=JSON.parse(localStorage.getItem("214m"))
+        pol1=JSON.parse(localStorage.getItem("pole1"))
+        pol2=JSON.parse(localStorage.getItem("pole2"))
+
+        if(game2===1)
+        {
+
+            game()
+            debtn()
+            resColor()
+            let b= document.querySelector(".gameOverbtn")
+            b.style.display="block"
+            if(hod===1)
+                DeActive(2)
+            else
+                DeActive(1)
+            clock()
+
+        }
+    }
+}
+localStoree()
+
 //*******/Нажатие кнопок рандом/****************
 
 let b1=document.querySelector("#b1")
 let b2=document.querySelector("#b2")
+let pl1 = document.querySelector("#pl1")
+let pl2 = document.querySelector("#pl2")
 b1.addEventListener("click",()=>{ArrangementOfShips(1)})
-b2.addEventListener("click",()=>{ArrangementOfShips(2)})
+b2.addEventListener("click",()=>{
+    ArrangementOfShips(2)
+    ArrangementOfShips(2)
+})
 
 
 //*******/Печать полей/****************
 
-function PrintPole(num)
+function PrintPole()
 {
     let pole1 = document.querySelector(".pole1")
     let pole2 = document.querySelector(".pole2")
-    if(num===1)
-    {
-        for(let j=0;j<10;j++)
-            for(let i=0;i<10;i++)
-                pole1.insertAdjacentHTML('beforeend',`<button class="kl1 ${i+1+j*10}" value="${i+1+j*10}" disabled>${i+1+j*10}</button>`)
-    }
-    if(num===2)
-    {
-        for(let j=0;j<10;j++)
-            for(let i=0;i<10;i++)
-                pole2.insertAdjacentHTML('beforeend',`<button class="kl2 ${100+i+1+j*10}" value="${i+1+j*10}" disabled>${i+1+j*10}</button>`)
-    }
-    if(num===3)
-    {
         for(let j=0;j<10;j++)
             for(let i=0;i<10;i++)
             {
                 pole1.insertAdjacentHTML('beforeend', `<button class="kl1 ${i+1+j*10}" value="${i+1+j*10}" disabled>${i + 1 + j * 10}</button>`)
                 pole2.insertAdjacentHTML('beforeend', `<button class="kl2 ${100+i+1+j*10}" value="${100+i+1+j*10}" disabled>${i + 1 + j * 10}</button>`)
             }
-    }
+
 }
-PrintPole(3)
+
 
 //*******/Регистрация нажатия на клетку/****************
 
@@ -248,7 +366,24 @@ function fire(ell)
             p1_14pals++
             killShip(1,14)
         }
-        if(k===0) DeActive(1)
+        if(k===0)
+        {
+            DeActive(1)
+            hod=2
+            localStorage.setItem("hod",hod)
+        }
+
+        localStorage.setItem("141",p1_41pals)
+        localStorage.setItem("131",p1_31pals)
+        localStorage.setItem("132",p1_32pals)
+        localStorage.setItem("121",p1_21pals)
+        localStorage.setItem("122",p1_22pals)
+        localStorage.setItem("123",p1_23pals)
+        localStorage.setItem("111",p1_11pals)
+        localStorage.setItem("112",p1_12pals)
+        localStorage.setItem("113",p1_13pals)
+        localStorage.setItem("114",p1_14pals)
+        localStorage.setItem("pole1",JSON.stringify(pol1))
     }
     else
     {
@@ -425,7 +560,23 @@ function fire(ell)
             p2_14pals++
             killShip(2,14)
         }
-        if(k===0) DeActive(2)
+        if(k===0)
+        {
+            DeActive(2)
+            hod=1
+            localStorage.setItem("hod",hod)
+        }
+        localStorage.setItem("241",p2_41pals)
+        localStorage.setItem("231",p2_31pals)
+        localStorage.setItem("232",p2_32pals)
+        localStorage.setItem("221",p2_21pals)
+        localStorage.setItem("222",p2_22pals)
+        localStorage.setItem("223",p2_23pals)
+        localStorage.setItem("211",p2_11pals)
+        localStorage.setItem("212",p2_12pals)
+        localStorage.setItem("213",p2_13pals)
+        localStorage.setItem("214",p2_14pals)
+        localStorage.setItem("pole2",JSON.stringify(pol2))
     }
 
     ell.setAttribute("disabled","disabled")
@@ -537,8 +688,9 @@ function killShipColor(el,num)
             pole1[el+11].setAttribute("disabled","disabled")
         }
     }
-    console.log(pol2)
-    console.log(pol1)
+    localStorage.setItem("pole1",JSON.stringify(pol1))
+    localStorage.setItem("pole2",JSON.stringify(pol2))
+
 }
 
 
@@ -691,6 +843,8 @@ function killShip(planeKill,numShip)
             })
         }
     }
+    localStorage.setItem("pole1",JSON.stringify(pol1))
+    localStorage.setItem("pole2",JSON.stringify(pol2))
 }
 
 //*******/Расстановка кораблей/****************
@@ -859,6 +1013,28 @@ function ArrangementOfShips (num)
         }
         render(2)
     }
+    localStorage.setItem("141m",JSON.stringify(p1_41pal))
+    localStorage.setItem("131m",JSON.stringify(p1_31pal))
+    localStorage.setItem("132m",JSON.stringify(p1_32pal))
+    localStorage.setItem("121m",JSON.stringify(p1_21pal))
+    localStorage.setItem("122m",JSON.stringify(p1_22pal))
+    localStorage.setItem("123m",JSON.stringify(p1_23pal))
+    localStorage.setItem("111m",JSON.stringify(p1_11pal))
+    localStorage.setItem("112m",JSON.stringify(p1_12pal))
+    localStorage.setItem("113m",JSON.stringify(p1_13pal))
+    localStorage.setItem("114m",JSON.stringify(p1_14pal))
+    localStorage.setItem("241m",JSON.stringify(p2_41pal))
+    localStorage.setItem("231m",JSON.stringify(p2_31pal))
+    localStorage.setItem("232m",JSON.stringify(p2_32pal))
+    localStorage.setItem("221m",JSON.stringify(p2_21pal))
+    localStorage.setItem("222m",JSON.stringify(p2_22pal))
+    localStorage.setItem("223m",JSON.stringify(p2_23pal))
+    localStorage.setItem("211m",JSON.stringify(p2_11pal))
+    localStorage.setItem("212m",JSON.stringify(p2_12pal))
+    localStorage.setItem("213m",JSON.stringify(p2_13pal))
+    localStorage.setItem("214m",JSON.stringify(p2_14pal))
+    localStorage.setItem("pole1",JSON.stringify(pol1))
+    localStorage.setItem("pole2",JSON.stringify(pol2))
 }
 
 
@@ -929,7 +1105,8 @@ function filling_the_space(kolP,polpj,koord,poles)
             }
         }
     }
-
+    localStorage.setItem("pole1",JSON.stringify(pol1))
+    localStorage.setItem("pole2",JSON.stringify(pol2))
 }
 
 
@@ -1007,11 +1184,34 @@ function zeroColor()
 
 //*******/Готовность 1го игрока/****************
 
-let pl1 = document.querySelector("#pl1")
-pl1.addEventListener("click",play1Ready)
-let pl2 = document.querySelector("#pl2")
-pl2.addEventListener("click",PlayGame)
 
+pl1.addEventListener("click",play1Ready)
+pl2.addEventListener("click",()=>{
+    zeroColor()
+    DeActive(2)
+    debtn()
+    let b= document.querySelector(".gameOverbtn")
+    b.style.display="block"
+    game1=1
+    localStorage.setItem("game1",game1)
+})
+//*******/Завершение игры/****************
+document.querySelector(".gameOverbtn").addEventListener("click",()=>{
+
+
+
+})
+function debtn()
+{
+    let pl1 = document.querySelector("#pl1")
+    let pl2 = document.querySelector("#pl2")
+    let b1=document.querySelector("#b1")
+    let b2=document.querySelector("#b2")
+    pl1.style.display="none"
+    pl2.style.display="none"
+    b1.style.display="none"
+    b2.style.display="none"
+}
 function play1Ready ()
 {
     pl1.setAttribute("disabled","disabled")
@@ -1020,17 +1220,9 @@ function play1Ready ()
     pl2.removeAttribute("disabled")
     b2.removeAttribute("disabled")
     zeroColor()
-    console.log(pol1)
 }
 
-//*******/Начало игры/****************
 
-function PlayGame()
-{
-    zeroColor()
-    DeActive(2)
-
-}
 //*******/Переключение хода/****************
 
 function DeActive(num)
@@ -1038,22 +1230,19 @@ function DeActive(num)
     let pole1 = document.querySelectorAll(".kl1")
     let pole2 = document.querySelectorAll(".kl2")
     if(num===1)
-    {console.log("-----------------------------")
+    {
         pole2.forEach((el,i)=>{
 
-            console.log(pol2[i])
-            console.log(pol2[i]%10)
             if(pol2[i]!==1 && pol2[i]%10!==2 && pol2[i]%10!==3)
                 el.removeAttribute("disabled")
 
         })
-        hod=2
+
         pole1.forEach((el,i)=>{
             if(pol1[i]!==1 && pol1[i]%10!==2 && pol1[i]%10!==3)
                 el.setAttribute("disabled","disabled")
 
         })
-
     }
     else
     {
@@ -1062,15 +1251,35 @@ function DeActive(num)
                 el.removeAttribute("disabled")
 
         })
-        hod=1
+
         pole2.forEach((el,i)=>{
             if(pol2[i]!==1 && pol2[i]%10!==2 && pol2[i]%10!==3)
                 el.setAttribute("disabled","disabled")
 
         })
     }
+}
 
+//*******/Прорисовка поля после реса/****************
+function resColor()
+{
+    let pole1 = document.querySelectorAll(".kl1")
+    let pole2 = document.querySelectorAll(".kl2")
+        pole2.forEach((el,i)=>{
 
+            if(pol2[i]===1)
+                el.style.backgroundColor="blue"
+            if(pol2[i]%10===2 || pol2[i]%10===3)
+                el.style.backgroundColor="red"
+
+        })
+        pole1.forEach((el,i)=>{
+            if(pol1[i]===1)
+                el.style.backgroundColor="blue"
+            if(pol1[i]%10===2 || pol1[i]%10===3)
+                el.style.backgroundColor="red"
+
+        })
 }
 //*******/Начало игры кнопка/****************
 document.querySelector(".btn").addEventListener("click",game)
@@ -1078,10 +1287,11 @@ function game()
 {
     let a = document.querySelector(".mask")
     a.style.display="none"
+    game2=1
+    localStorage.setItem("game2",game2)
 }
 
 //*******/часы/****************
-
 
 function clock()
 {
@@ -1090,9 +1300,10 @@ function clock()
         let hour = document.querySelector("#hour")
         let minute = document.querySelector("#minute")
         let seconds = document.querySelector("#seconds")
-        let h= +hour.innerHTML
-        let m= +minute.innerHTML
-        let s= +seconds.innerHTML
+        let h= +localStorage.getItem("h")
+        let m= +localStorage.getItem("m")
+        let s= +localStorage.getItem("s")
+
         s++
         if (s===60)
         {
@@ -1111,8 +1322,9 @@ function clock()
         hour.innerHTML=h
         minute.innerHTML=m
         seconds.innerHTML=s
+        localStorage.setItem("h",h)
+        localStorage.setItem("m",m)
+        localStorage.setItem("s",s)
     }
-
-
 }
 var interval = setInterval(clock,1000)
