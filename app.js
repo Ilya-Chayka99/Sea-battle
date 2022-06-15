@@ -23,6 +23,7 @@ let p2_13pal=[]
 let p2_14pal=[]
 let p2_41pals=0,p2_31pals=0,p2_32pals=0,p2_21pals=0,p2_22pals=0,p2_23pals=0,p2_11pals=0,p2_12pals=0,p2_13pals=0,p2_14pals=0;
 let hod=1
+let game1=0
 zero(0)
 //*******/Нажатие кнопок рандом/****************
 
@@ -1071,6 +1072,47 @@ function DeActive(num)
 
 
 }
+//*******/Начало игры кнопка/****************
+document.querySelector(".btn").addEventListener("click",game)
+function game()
+{
+    let a = document.querySelector(".mask")
+    a.style.display="none"
+}
+
+//*******/часы/****************
 
 
+function clock()
+{
+    if(game1===1)
+    {
+        let hour = document.querySelector("#hour")
+        let minute = document.querySelector("#minute")
+        let seconds = document.querySelector("#seconds")
+        let h= +hour.innerHTML
+        let m= +minute.innerHTML
+        let s= +seconds.innerHTML
+        s++
+        if (s===60)
+        {
+            m++
+            s=0
+            if(m===60)
+            {
+                h++
+                m=0
+                if(h===100) h=0
+            }
+        }
+        h=(h<10)?'0'+h:h
+        m=(m<10)?'0'+m:m
+        s=(s<10)?'0'+s:s
+        hour.innerHTML=h
+        minute.innerHTML=m
+        seconds.innerHTML=s
+    }
 
+
+}
+var interval = setInterval(clock,1000)

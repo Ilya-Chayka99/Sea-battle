@@ -1,0 +1,130 @@
+body
+{
+    position: relative;
+}
+.mask
+{
+    background: linear-gradient(180deg, #36014C 0%, #2C013E 100%);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.btn
+{
+    position: relative;
+    width: 30vh;
+    height: 20vh;
+    margin: 20px;
+
+}
+.btn span
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 30px;
+    color: white;
+    font-size: 400%;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.5s;
+    z-index: 3;
+    backdrop-filter: blur(15px);
+}
+.btn:hover span
+{
+    letter-spacing: 3px;
+}
+.btn span::before
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 50%;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(to left,rgba(255,255,255,0.15),transparent);
+    transform: skewX(30deg) translateX(0);
+    transition: 0.5s;
+    z-index: 2;
+}
+.btn:hover span::before
+{
+    width: 100%;
+    transform: skewX(0deg) translateX(0);
+    left: 0;
+
+}
+.btn::before
+{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: #f00;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.btn:hover::before
+{
+
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.1s;
+
+}
+
+.btn::after
+{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: #f00;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.btn:hover::after
+{
+
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.1s;
+
+}
+.btn:nth-child(1)::before,
+.btn:nth-child(1)::after
+{
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71,
+        0 0 15px #ff1f71,
+        0 0 30px #ff1f71,
+        0 0 60px #ff1f71;
+}
