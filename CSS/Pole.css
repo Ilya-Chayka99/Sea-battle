@@ -5,20 +5,23 @@
     align-items: center;
     flex-wrap: wrap;
     height: 60vh;
-    background-color: blue;
+    background-color: #0F0F0F;
+
 }
 
 .allPole
 {
-    background-color: white;
+    background-color: #1e9bff;
     width: 50vh;
     height: 50vh;
-    border: 2px solid black;
+    border: 2px solid #1D1DA3;
     display: flex;
     flex-wrap: wrap;
-
+    position: relative;
+    margin: 30px;
 
 }
+
 .kl2
 {
     cursor: pointer;
@@ -28,7 +31,7 @@
     text-align: center;
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 1px solid black;
+    border: 1px solid #1D1DA3;
 }
 .kl1
 {
@@ -39,30 +42,610 @@
     text-align: center;
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 1px solid black;
+    border: 1px solid #1D1DA3;
 }
+
+.k1:before
+{
+    content: 'A';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k1:after
+{
+    content: '1';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 1.5vh;
+    left: -9%;
+}
+.k101:after
+{
+    content: '1';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 1.5vh;
+    left: -9%;
+}
+.k2:before
+{
+    content: 'B';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k3:before
+{
+    content: 'C';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k4:before
+{
+    content: 'D';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k5:before
+{
+    content: 'E';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k6:before
+{
+    content: 'F';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k7:before
+{
+    content: 'G';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k8:before
+{
+    content: 'H';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k9:before
+{
+    content: 'I';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k10:before
+{
+    content: 'J';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k101:before
+{
+    content: 'A';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k102:before
+{
+    content: 'B';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k103:before
+{
+    content: 'C';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k104:before
+{
+    content: 'D';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k105:before
+{
+    content: 'E';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k106:before
+{
+    content: 'F';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k107:before
+{
+    content: 'G';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k108:before
+{
+    content: 'H';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k109:before
+{
+    content: 'I';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k110:before
+{
+    content: 'J';
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: -2vh;
+}
+.k11:after
+{
+    content: '2';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 6.5vh;
+    left: -9%;
+}
+.k21:after
+{
+    content: '3';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 11.5vh;
+    left: -9%;
+}
+.k31:after
+{
+    content: '4';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 16.5vh;
+    left: -9%;
+}
+.k41:after
+{
+    content: '5';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 21vh;
+    left: -9%;
+}
+.k51:after
+{
+    content: '6';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 26vh;
+    left: -9%;
+}
+.k61:after
+{
+    content: '7';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 31vh;
+    left: -9%;
+}
+.k71:after
+{
+    content: '8';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 36vh;
+    left: -9%;
+}
+.k81:after
+{
+    content: '9';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 41vh;
+    left: -9%;
+}
+.k91:after
+{
+    content: '10';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 46vh;
+    left: -9%;
+}
+
+.k111:after
+{
+    content: '2';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 6.5vh;
+    left: -9%;
+}
+.k121:after
+{
+    content: '3';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 11.5vh;
+    left: -9%;
+}
+.k131:after
+{
+    content: '4';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 16.5vh;
+    left: -9%;
+}
+.k141:after
+{
+    content: '5';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 21vh;
+    left: -9%;
+}
+.k151:after
+{
+    content: '6';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 26vh;
+    left: -9%;
+}
+.k161:after
+{
+    content: '7';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 31vh;
+    left: -9%;
+}
+.k171:after
+{
+    content: '8';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 36vh;
+    left: -9%;
+}
+.k181:after
+{
+    content: '9';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 41vh;
+    left: -9%;
+}
+.k191:after
+{
+    content: '10';
+    position: absolute;
+    width: 10%;
+    color: white;
+    top: 46vh;
+    left: -9%;
+}
+
+
+
+
+
 .play
 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: lime;
+    background-color: #202020;
     height: 20vh;
 }
 .Random
 {
     width: 20vw;
     height: 10vh;
+    position: relative;
+    background: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100%;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    transition: 0.5s;
 }
+.Random:hover
+{
+    letter-spacing: 0.25em;
+    font-size: 70%;
+    background: var(--clr);
+
+    box-shadow: 0 0 35px var(--clr);
+}
+.Random:hover span
+{
+    color: var(--clr);
+}
+.Random::before
+{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #202020;
+}
+.Random span
+{
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+.Random i
+{
+    position: absolute;
+    inset: 0;
+    /*display: block;*/
+}
+.Random i::before
+{
+    content: '';
+    top: -0.4vw;
+    position: absolute;
+    width: 4vw;
+    height: 1vw;
+
+    left: 60%;
+    border: 2px solid var(--clr);
+    background: #202020;
+    transition: 0.5s;
+}
+.Random:hover i::before
+{
+    left: 15%;
+}
+
+.Random i::after
+{
+    content: '';
+    bottom: -0.4vw;
+    position: absolute;
+    width: 4vw;
+    height: 1vw;
+
+    left: 15%;
+    border: 2px solid var(--clr);
+    background: #202020;
+    transition: 0.5s;
+}
+.Random:hover i::after
+{
+    left: 60%;
+}
+
+
+
 .Play
 {
     width: 20vw;
     height: 10vh;
+    position: relative;
+    background: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100%;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    transition: 0.5s;
 }
-.gameOverbtn
+.Play:hover
+{
+    letter-spacing: 0.25em;
+    font-size: 70%;
+    background: var(--clr);
+
+    box-shadow: 0 0 35px var(--clr);
+}
+.Play:hover span
+{
+    color: var(--clr);
+}
+.Play::before
+{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #202020;
+}
+.Play span
+{
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+.Play i
 {
     position: absolute;
+    inset: 0;
+    /*display: block;*/
+}
+.Play i::before
+{
+    content: '';
+    top: -0.4vw;
+    position: absolute;
+    width: 4vw;
+    height: 1vw;
+
+    left: 60%;
+    border: 2px solid var(--clr);
+    background: #202020;
+    transition: 0.5s;
+}
+.Play:hover i::before
+{
+    left: 15%;
+}
+
+.Play i::after
+{
+    content: '';
+    bottom: -0.4vw;
+    position: absolute;
+    width: 4vw;
+    height: 1vw;
+
+    left: 15%;
+    border: 2px solid var(--clr);
+    background: #202020;
+    transition: 0.5s;
+}
+.Play:hover i::after
+{
+    left: 60%;
+}
+
+
+/*.gameOverbtn*/
+/*{*/
+/*    position: absolute;*/
+/*    width: 20vw;*/
+/*    height: 10vh;*/
+/*    display: none;*/
+/*}*/
+.gameOverbtn
+{
     width: 20vw;
     height: 10vh;
+    position: absolute;
+    background: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100%;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    transition: 0.5s;
     display: none;
+}
+.gameOverbtn:hover
+{
+    letter-spacing: 0.25em;
+    font-size: 70%;
+    background: var(--clr);
+
+    box-shadow: 0 0 35px var(--clr);
+}
+.gameOverbtn:hover span
+{
+    color: var(--clr);
+}
+.gameOverbtn::before
+{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #202020;
+}
+.gameOverbtn span
+{
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+.gameOverbtn i
+{
+    position: absolute;
+    inset: 0;
+    /*display: block;*/
+}
+.gameOverbtn i::before
+{
+    content: '';
+    top: -0.4vw;
+    position: absolute;
+    width: 4vw;
+    height: 1vw;
+
+    left: 60%;
+    border: 2px solid var(--clr);
+    background: #202020;
+    transition: 0.5s;
+}
+.gameOverbtn:hover i::before
+{
+    left: 15%;
+}
+
+.gameOverbtn i::after
+{
+    content: '';
+    bottom: -0.4vw;
+    position: absolute;
+    width: 4vw;
+    height: 1vw;
+
+    left: 15%;
+    border: 2px solid var(--clr);
+    background: #202020;
+    transition: 0.5s;
+}
+.gameOverbtn:hover i::after
+{
+    left: 60%;
 }

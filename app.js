@@ -133,10 +133,10 @@ function localStoree()
         pol1=JSON.parse(localStorage.getItem("pole1"))
         pol2=JSON.parse(localStorage.getItem("pole2"))
 
-        if(game2===1)
+        if(game1===1)
         {
 
-            game()
+
             debtn()
             resColor()
             let b= document.querySelector(".gameOverbtn")
@@ -147,6 +147,10 @@ function localStoree()
                 DeActive(1)
             clock()
 
+        }
+        if(game2===1)
+        {
+            game()
         }
     }
 }
@@ -174,8 +178,8 @@ function PrintPole()
         for(let j=0;j<10;j++)
             for(let i=0;i<10;i++)
             {
-                pole1.insertAdjacentHTML('beforeend', `<button class="kl1 ${i+1+j*10}" value="${i+1+j*10}" disabled>${i + 1 + j * 10}</button>`)
-                pole2.insertAdjacentHTML('beforeend', `<button class="kl2 ${100+i+1+j*10}" value="${100+i+1+j*10}" disabled>${i + 1 + j * 10}</button>`)
+                pole1.insertAdjacentHTML('beforeend', `<button class="kl1 k${i+1+j*10}" value="${i+1+j*10}" disabled></button>`)
+                pole2.insertAdjacentHTML('beforeend', `<button class="kl2 k${100+i+1+j*10}" value="${100+i+1+j*10}" disabled></button>`)
             }
 
 }
@@ -303,7 +307,7 @@ function fire(ell)
                                                 }
                                                 else
                                                 {
-                                                    ell.style.backgroundColor="blue"
+                                                    ell.style.background="url('../img/1.png') center center / 100% no-repeat"
                                                     pol1[numKletka-1]=1
                                                 }
                                             })
@@ -497,7 +501,7 @@ function fire(ell)
                                                 }
                                                 else
                                                 {
-                                                    ell.style.backgroundColor="blue"
+                                                    ell.style.background="url('../img/1.png') center center / 100% no-repeat"
                                                     pol2[numKletka-1]=1
                                                 }
                                             })
@@ -591,49 +595,49 @@ function killShipColor(el,num)
         if (pol2[el - 11]%10===1 && el%10!==0)
         {
             pol2[el - 11] = 1
-            pole2[el-11].style.backgroundColor="blue"
+            pole2[el-11].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el-11].setAttribute("disabled","disabled")
         }
         if (pol2[el - 10]%10===1)
         {
             pol2[el - 10] = 1
-            pole2[el-10].style.backgroundColor="blue"
+            pole2[el-10].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el-10].setAttribute("disabled","disabled")
         }
         if (pol2[el - 9]%10===1 && el%10!==9)
         {
             pol2[el - 9] = 1
-            pole2[el-9].style.backgroundColor="blue"
+            pole2[el-9].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el-9].setAttribute("disabled","disabled")
         }
         if (pol2[el - 1]%10===1 && el%10!==0)
         {
             pol2[el - 1] = 1
-            pole2[el-1].style.backgroundColor="blue"
+            pole2[el-1].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el-1].setAttribute("disabled","disabled")
         }
         if (pol2[el + 1]%10===1 && el%10!==9)
         {
             pol2[el + 1] = 1
-            pole2[el+1].style.backgroundColor="blue"
+            pole2[el+1].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el+1].setAttribute("disabled","disabled")
         }
         if (pol2[el + 9] %10===1 && el%10!==0)
         {
             pol2[el + 9] = 1
-            pole2[el+9].style.backgroundColor="blue"
+            pole2[el+9].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el+9].setAttribute("disabled","disabled")
         }
         if (pol2[el + 10] %10===1)
         {
             pol2[el + 10] = 1
-            pole2[el+10].style.backgroundColor="blue"
+            pole2[el+10].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el+10].setAttribute("disabled","disabled")
         }
         if (pol2[el + 11 ] %10===1 && el%10!==9)
         {
             pol2[el + 11] = 1
-            pole2[el+11].style.backgroundColor="blue"
+            pole2[el+11].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole2[el+11].setAttribute("disabled","disabled")
         }
     }
@@ -642,49 +646,49 @@ function killShipColor(el,num)
         if (pol1[el - 11]%10===1 && el%10!==0)
         {
             pol1[el - 11] = 1
-            pole1[el-11].style.backgroundColor="blue"
+            pole1[el-11].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el-11].setAttribute("disabled","disabled")
         }
         if (pol1[el - 10]%10===1)
         {
             pol1[el - 10] = 1
-            pole1[el-10].style.backgroundColor="blue"
+            pole1[el-10].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el-10].setAttribute("disabled","disabled")
         }
         if (pol1[el - 9]%10===1 && el%10!==9)
         {
             pol1[el - 9] = 1
-            pole1[el-9].style.backgroundColor="blue"
+            pole1[el-9].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el-9].setAttribute("disabled","disabled")
         }
         if (pol1[el - 1]%10===1 && el%10!==0)
         {
             pol1[el - 1] = 1
-            pole1[el-1].style.backgroundColor="blue"
+            pole1[el-1].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el-1].setAttribute("disabled","disabled")
         }
         if (pol1[el + 1]%10===1 && el%10!==9)
         {
             pol1[el + 1] = 1
-            pole1[el+1].style.backgroundColor="blue"
+            pole1[el+1].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el+1].setAttribute("disabled","disabled")
         }
         if (pol1[el + 9] %10===1 && el%10!==0)
         {
             pol1[el + 9] = 1
-            pole1[el+9].style.backgroundColor="blue"
+            pole1[el+9].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el+9].setAttribute("disabled","disabled")
         }
         if (pol1[el + 10] %10===1)
         {
             pol1[el + 10] = 1
-            pole1[el+10].style.backgroundColor="blue"
+            pole1[el+10].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el+10].setAttribute("disabled","disabled")
         }
         if (pol1[el + 11 ] %10===1 && el%10!==9)
         {
             pol1[el + 11] = 1
-            pole1[el+11].style.backgroundColor="blue"
+            pole1[el+11].style.background="url('../img/1.png') center center / 100% no-repeat"
             pole1[el+11].setAttribute("disabled","disabled")
         }
     }
@@ -1126,7 +1130,7 @@ function render(num)
             else
             {
                 if(c===0) pole1[i].style.backgroundColor = "blue"
-                else pole1[i].style.backgroundColor = "green"
+                // else pole1[i].style.backgroundColor = "green"
             }
 
         }
@@ -1146,7 +1150,7 @@ function render(num)
             else
             {
                 if(c===0) pole2[i].style.backgroundColor = "blue"
-                else pole2[i].style.backgroundColor = "green"
+                // else pole2[i].style.backgroundColor = "green"
             }
 
         }
@@ -1177,8 +1181,10 @@ function zeroColor()
 
     for(let i=0;i<100;i++)
     {
-        pole1[i].style.backgroundColor="white"
-        pole2[i].style.backgroundColor="white"
+        if(pol1[i]%10===0&&pol1[i]/10!==0 && pole1[i].style.length!==0)
+        pole1[i].style.backgroundColor=null
+        if(pol2[i]%10===0&&pol2[i]/10!==0)
+        pole2[i].style.backgroundColor=null
     }
 }
 
@@ -1197,10 +1203,30 @@ pl2.addEventListener("click",()=>{
 })
 //*******/Завершение игры/****************
 document.querySelector(".gameOverbtn").addEventListener("click",()=>{
+    game1=0
+    localStorage.setItem("game1",game1)
+    let pole1 = document.querySelectorAll(".kl1")
+    let pole2 = document.querySelectorAll(".kl2")
 
+    pole1.forEach((el,i)=>{
+        if(pol1[i]%10===0 && pol1[i]/10!==0)
+            el.style.backgroundColor="green"
+        el.setAttribute("disabled","disabled")
+    })
+    pole2.forEach((el,i)=>{
+        if(pol2[i]%10===0 && pol2[i]/10!==0)
+            el.style.backgroundColor="green"
+        el.setAttribute("disabled","disabled")
+    })
+    localStorage.clear()
+    setTimeout(function(){
+        location.reload();
+    }, 10000);
 
 
 })
+
+//*******/Начало игры/****************
 function debtn()
 {
     let pl1 = document.querySelector("#pl1")
@@ -1268,14 +1294,14 @@ function resColor()
         pole2.forEach((el,i)=>{
 
             if(pol2[i]===1)
-                el.style.backgroundColor="blue"
+                el.style.background="url('../img/1.png') center center / 100% no-repeat"
             if(pol2[i]%10===2 || pol2[i]%10===3)
                 el.style.backgroundColor="red"
 
         })
         pole1.forEach((el,i)=>{
             if(pol1[i]===1)
-                el.style.backgroundColor="blue"
+                el.style.background="url('../img/1.png') center center / 100% no-repeat"
             if(pol1[i]%10===2 || pol1[i]%10===3)
                 el.style.backgroundColor="red"
 
